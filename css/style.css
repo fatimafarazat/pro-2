@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 2500px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0px 70px;
+    perspective: 700px;
+}
+.container{
+    margin: auto;
+    width: 100%;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.t{
+    font-size: 60px;
+    font-weight: 10px;
+
+    color:palevioletred 
+}
+
+.list{
+    list-style: none;
+}
+
+
+.header ul li {
+    display: inline-block;
+}
+.dropdown{
+    position: relative;
+}
+/* nesting  */
+
+.header nav ul li .link-item {
+    display: block;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 19px;
+}
+
+.header ul li a, .header ul li a {
+    color:palevioletred
+}
+a {
+    text-decoration: none;
+}
+.img{
+    height: 100px;
+}
+
+.dropdown{
+position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 10;
+    width: 450px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5px;
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    border: 2px solid palevioletred;
+    padding: 15px;
+  
+}
+.dropdown:hover .dropdown-menu {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-menu ul {
+    display:grid;
+ 
+    grid-template-rows:repeat(3,20%);
+  float: left;
+  margin: 0px 20px;
+    text-align:left;
+}
+
+.header nav ul li .link-item {
+position: relative;
+bottom: 0;
+left: 0;
+
+}
+
+.link-item::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top: 2px solid palevioletred;
+    border-bottom: 2px solid palevioletred;
+    transition: 0.5s;
+    opacity: 0;
+}
+.link-item:hover::after  {
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.5 ;
+ }
+    
+ .link-item::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    border-left: 2px solid palevioletred;
+    border-right: 2px solid palevioletred;
+    transition: 0.5s;
+    opacity: 0;
+}
+.link-item:hover::before {
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.5 ;
+ }
+
+
+/* //////////////////////////////////////////////// */
+.home {
+     width: 100%;
+     height: 100vh ;
+     background-image: url(../Images/h.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+}
+.home-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.6) ;
+}
+.home-content {
+    width: 60%;
+    /* hero image */
+    position: absolute;
+    top: 50%;
+    left: 10%;
+   
+    text-align: left;
+}
+.home-title {
+    color: #fff;
+    font-size: 55px;
+}
+.home-p {
+    margin: 20px  0px;
+    color: rgb(185, 185, 185);
+    letter-spacing: 2px;
+}
+.home-btn {
+    width: 150px;
+    padding: 16px  0px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.home-btn2 {
+    background-color: blue;
+    color: #fff;
+    margin-left: 11px;
+}
+
+.home-btn:hover {
+    opacity: 0.7;
+}
+.list-2{
+    color: palevioletred;
+    margin-left: 20px;
+}
+
+/* ///////////////////////second section////////////////////////// */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.section-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-header:hover .line {
+    width: 150px;
+}
+
+.section-header .line {
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: palevioletred;
+    margin: auto;
+    transition:  0.5s;
+}
+
+.category-items {
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    gap: 10px;
+}
+
+.category-item {
+    position: relative;
+}
+
+.category-item-subtitle {
+    color: gray;
+    font-weight: normal;
+    margin-top: 20px;
+}
+.category-item-title {
+    font-size: 19px;
+}
+
+
+.category-item .icon {
+    width: 30px;
+    height: 30px;
+    background-color: palevioletred;
+    color: rgb(255, 255, 255);
+    text-align: center;
+  
+    line-height: 30px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    visibility: hidden;
+    opacity: 0;
+    margin-right: 20px;
+}
+
+.category-item:hover .icon{
+    visibility: visible;
+    opacity: 1;
+}
+
+.img1{
+    width: 280px;
+    height: 280px;
+    border: 2px solid pink;
+}
+
+.discount {
+    display: flex;
+    margin: 30px 0px;
+    margin-top: 30px;
+}
+
+.discount-desc {
+    position: relative;
+    flex: 2 1 0%;
+    background: rgb(247, 243, 239);
+    padding: 20px;
+}
+
+.discount-desc .top {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.discount-desc .top .icon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 50px;
+    color: palevioletred;
+}
+
+.discount-item {
+    background-image: url(../images/13.PNG);
+    background-size: cover;
+    margin: 0px 20px;
+    border: 2px solid plum;
+    transition:1s;
+    
+}
+.discount-item:hover{
+    transform: scale(1.1);
+}
+
+.discount-item {
+    height: 300px;
+    position: relative;
+    flex: 1 1 0%;
+}
+
+.discount-item-info {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.discount-desc .bullets {
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+
+}
+
+.discount-desc .bullets span {
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    margin-left:10px;
+    background: palevioletred;
+     
+}
+
+.sprites {
+    display: flex;
+    margin-bottom: 55px;
+}
+
+.sprite-item {
+    text-align: center;
+    flex: 1 1 0%;
+    border-right: 1px solid palevioletred;
+}
+
+/*  */
+
+.sprite-icon {
+    background-image: url(../images/in_1.png);
+    height: 55px;
+    background-repeat: no-repeat;
+    margin-left: 100px;
+    transition: 1s;
+}
+
+.sprite-item:hover .sprite-icon {
+  transform:rotateX(360deg);
+}
+
+.icon1 {
+    background-image: url(../images/service-icon.png);
+    height: 55px;
+    background-repeat: no-repeat;
+}
+
+.icon-1 {
+    background-position: center 5px;
+   
+}
+
+.sprite-item:hover .icon-1 {
+    background-position: center -86px;
+}
+
+.icon-2 {
+    background-position: center -180px;
+  
+}
+
+.sprite-item:hover .icon-2 {
+    background-position: center -273px;
+}
+
+
+.icon-3 {
+    background-position: center -366px;
+    transition: all 0.5s ease 0s;
+}
+
+.sprite-item:hover .icon-3 {
+    background-position: center -455px;
+}
+
+.icon-4 {
+    background-position: center -549px;
+    transition: all 0.5s ease 0s;
+}
+.sprite-item:hover .icon-4 {
+    background-position: center -639px;
+}
+.icon-5 {
+    background-position: center -734px;
+    transition: all 0.5s ease 0s;
+}
+.sprite-item:hover .icon-5 {
+    background-position: center -826px;
+}
+
+
+/* ///////////////////////////prodact.......................... */
+.section-padding {
+    padding: 40px 0px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.list-product {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.list-product li {
+    margin: 10px 20px;
+    color: palevioletred;
+}
+
+.products-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0px;
+}
+
+.product-img {
+    position: relative;
+}
+
+
+.product-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: scaleX(0);
+    opacity: 0.9;
+   
+    
+}
+
+.product-overlay ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product-overlay ul li {
+    width: 30px;
+    height: 40px;
+    background-color: palevioletred;
+    display: inline-block;
+    text-align: center;
+}
+
+.product-overlay ul li i {
+    color: gray;
+    line-height: 40px;
+}
+
+
+.list-unstyled {
+    list-style: none;
+}
+
+.product-item i.active {
+    color: yellow;
+}
+
+.product-info i {
+    margin-top: 10px;
+}
+
+
+
+.product-info span {
+    display: block;
+    margin: 5px 0px;
+}
+
+.product-item:hover .product-overlay {
+    transform: scaleX(1);
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
